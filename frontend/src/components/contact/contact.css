@@ -11,6 +11,6 @@
   padding-top: 10em;
 }
 
-/* .contact-subtitle {
-  margin-top: 10em;
-} */
+.contact-title {
+  font-weight: 700;
+}

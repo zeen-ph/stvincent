@@ -167,10 +167,10 @@ session_start();
     }
   })
 
-  gsap.set('.contact-title', { y: 0, opacity: 0 });
+  gsap.set('.contact-title', { y: -50, opacity: 0 });
 
   contactTitle.to('.contact-title', {
-    y: 50,
+    y: 0,
     opacity: 1,
   })
 
@@ -186,10 +186,10 @@ session_start();
     }
   })
 
-  gsap.set('.contact-subtitle', { opacity: 0 });
+  gsap.set('.contact-subtitle', { y: 100, opacity: 0 });
 
   contactSubtitle.to('.contact-subtitle', {
-    y: -100,
+    y: 0,
     opacity: 1,
     duration: 5
   })
