@@ -134,27 +134,45 @@ session_start();
     backgroundColor: 'white'
   });
 
+  // /* CONTACT TITLE */
+  // const contactTitle = document.querySelectorAll('.contact-title');
+
+  // contactTitle.forEach(entry => {
+  //   gsap.set(contactTitle, {
+  //     yPercent: 0,
+  //     opacity: 0,
+  //   });
+  // });
+
+  // gsap.to(contactTitle, {
+  //   scrollTrigger: {
+  //     trigger: contactTitle,
+  //     start: 'bottom 60%',
+  //     end: 'top',
+  //     markers: false,
+  //     scrub: true
+  //   },
+  //   yPercent: 100,
+  //   opacity: 1,
+  // });
+
   /* CONTACT TITLE */
-  const contactTitle = document.querySelectorAll('.contact-title');
-
-  contactTitle.forEach(entry => {
-    gsap.set(contactTitle, {
-      yPercent: 0,
-      opacity: 0,
-    });
-  });
-
-  gsap.to(contactTitle, {
+  let contactTitle = gsap.timeline({
     scrollTrigger: {
-      trigger: contactTitle,
+      trigger: '.contact-title',
       start: 'bottom 60%',
       end: 'top',
       markers: false,
-      scrub: true
-    },
-    yPercent: 100,
+      scrub: true,
+    }
+  })
+
+  gsap.set('.contact-title', { y: 0, opacity: 0 });
+
+  contactTitle.to('.contact-title', {
+    y: 50,
     opacity: 1,
-  });
+  })
 
 
   /* CONTACT SUBTITLE */
