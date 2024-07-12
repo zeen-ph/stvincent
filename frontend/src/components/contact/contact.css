@@ -1,0 +1,16 @@
+.contact {
+  padding-top: 8em;
+  background-color: var(--color-yellow);
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 10em;
+}
+
+.contact-subtitle {
+  margin-top: 10em;
+}
