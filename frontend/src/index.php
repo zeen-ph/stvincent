@@ -29,9 +29,11 @@ session_start();
   <!-- CSS STYLING -->
   <link rel="stylesheet" href="/stvincent/frontend/src/globals.css">
   <link rel="stylesheet" href="/stvincent/frontend/src/components/header/header.css">
+  <link rel="stylesheet" href="/stvincent/frontend/src/components/footer/footer.css">
   <link rel="stylesheet" href="/stvincent/frontend/src/components/hero/hero.css">
   <link rel="stylesheet" href="/stvincent/frontend/src/components/timeline/timeline.css">
   <link rel="stylesheet" href="/stvincent/frontend/src/components/contact/contact.css">
+  <link rel="stylesheet" href="/stvincent/frontend/src/components/gallery/gallery.css">
 
 </head>
 
@@ -51,6 +53,11 @@ session_start();
     ?>
   </div>
 
+  <!-- FOOTER -->
+  <footer>
+    <?php include '../src/components/footer/footer.php' ?>
+  </footer>
+
 
 </body>
 
@@ -58,18 +65,20 @@ session_start();
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
+<!-- SPLIT TYPE -->
+<script src="https://unpkg.com/split-type"></script>
 
 <!-- LENIS -->
 <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 <script>
+
+  gsap.registerPlugin(ScrollTrigger)
 
   const entries = document.querySelectorAll('.timeline-item');
 
   entries.forEach(entry => {
     const entryLeft = entry.querySelector('.left');
     const entryRight = entry.querySelector('.right')
-
-    console.log(entryLeft, entryRight);
 
     if (entryLeft) {
       gsap.set(entryLeft, {
@@ -134,28 +143,6 @@ session_start();
     backgroundColor: 'white'
   });
 
-  // /* CONTACT TITLE */
-  // const contactTitle = document.querySelectorAll('.contact-title');
-
-  // contactTitle.forEach(entry => {
-  //   gsap.set(contactTitle, {
-  //     yPercent: 0,
-  //     opacity: 0,
-  //   });
-  // });
-
-  // gsap.to(contactTitle, {
-  //   scrollTrigger: {
-  //     trigger: contactTitle,
-  //     start: 'bottom 60%',
-  //     end: 'top',
-  //     markers: false,
-  //     scrub: true
-  //   },
-  //   yPercent: 100,
-  //   opacity: 1,
-  // });
-
   /* CONTACT TITLE */
   let contactTitle = gsap.timeline({
     scrollTrigger: {
@@ -193,6 +180,81 @@ session_start();
     opacity: 1,
     duration: 5
   })
+
+  /* CONTACT DETAILS */
+  let contactDetails = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.left-side',
+      start: 'top center',
+      end: 'bottom 70%',
+      markers: false,
+      scrub: true,
+    }
+  })
+
+  gsap.set('.left-side', { y: 100, opacity: 0 });
+
+  contactDetails.to('.left-side', {
+    y: 0,
+    opacity: 1,
+    duration: 5
+  })
+
+  /* GOOGLE MAP */
+  let googleMap = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.right-side',
+      start: 'top center',
+      end: 'bottom center',
+      markers: false,
+      scrub: true,
+    }
+  })
+
+  gsap.set('.right-side', { x: 100, opacity: 0 });
+
+  googleMap.to('.right-side', {
+    x: 0,
+    opacity: 1,
+    duration: 5
+  })
+
+  /* SPLIT TYPES */
+  const galleryTitles = document.querySelectorAll('.gallery-title');
+
+  galleryTitles.forEach((title) => {
+    const galleryText = new SplitType(title, { types: 'chars' });
+
+    gsap.from(galleryText.chars, {
+      scrollTrigger: {
+        trigger: title,
+        start: 'top 80%',
+        end: 'top center',
+        scrub: true,
+      },
+      y: 100,
+      opacity: 0,
+      stagger: 0.1
+    });
+  });
+
+
+  /* GALLERY IMAGES */
+  const galleryScroll = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.gallery-img',
+      start: 'top bottom',
+      end: 'bottom center',
+      scrub: true
+    }
+  }).to('.gallery-img', {
+    stagger: 0.2,
+    y: -200
+  });
+
+
+
+
 
   const lenis = new Lenis()
 

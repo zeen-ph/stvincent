@@ -3,6 +3,8 @@
         <?php
         include '../src/components/hero/hero.php';
         include '../src/components/timeline/timeline.php';
-        include '../src/components/contact/contact.php'
+        include '../src/components/contact/contact.php';
+        include '../src/components/gallery/gallery.php'
             ?>
     </div>
+</section>

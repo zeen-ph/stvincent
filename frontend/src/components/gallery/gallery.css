@@ -1,0 +1,65 @@
+.gallery {
+  background-color: var(--color-white);
+  padding-top: 5em;
+}
+
+.gallery-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-title h1 {
+  font-weight: 700;
+}
+
+.gallery-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100vh;
+  padding-top: 20rem;
+  margin: 0 auto;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+
+  &:nth-of-type(1) {
+    background-image: url("../../../public/images/gallery1.webp");
+  }
+  &:nth-of-type(2) {
+    background-image: url("../../../public/images/gallery2.webp");
+  }
+  &:nth-of-type(3) {
+    background-image: url("../../../public/images/gallery3.webp");
+  }
+  &:nth-of-type(4) {
+    background-image: url("../../../public/images/gallery4.webp");
+  }
+  &:nth-of-type(5) {
+    background-image: url("../../../public/images/gallery5.webp");
+  }
+  &:nth-of-type(6) {
+    background-image: url("../../../public/images/gallery6.webp");
+  }
+  &:nth-of-type(7) {
+    background-image: url("../../../public/images/gallery7.webp");
+  }
+  &:nth-of-type(8) {
+    background-image: url("../../../public/images/gallery8.webp");
+  }
+  &:nth-of-type(9) {
+    background-image: url("../../../public/images/gallery9.webp");
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+}
