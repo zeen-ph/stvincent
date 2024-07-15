@@ -1,5 +1,5 @@
-<section class="fe-page mx-5" id="page_about">
-    <h1>About</h1>
+<section class="fe-page" id="page_login">
+    <h1>Login</h1>
     <p>hello world</p>
     <p>hello world</p>
     <p>hello world</p>

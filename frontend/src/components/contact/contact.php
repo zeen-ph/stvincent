@@ -1,4 +1,4 @@
-<section class="contact">
+<section class="contact py-6">
     <div class="contact-container">
         <h1 class="contact-title">CONTACT US</h1>
         <p class="contact-subtitle">CONTACT INFORMATION</p>

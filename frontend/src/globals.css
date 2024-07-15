@@ -44,3 +44,7 @@ html.lenis body {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+.fe-page {
+  overflow-x: hidden;
+}
