@@ -34,6 +34,7 @@ session_start();
   <link rel="stylesheet" href="/stvincent/frontend/src/components/timeline/timeline.css">
   <link rel="stylesheet" href="/stvincent/frontend/src/components/contact/contact.css">
   <link rel="stylesheet" href="/stvincent/frontend/src/components/gallery/gallery.css">
+  <link rel="stylesheet" href="/stvincent/frontend/src/pages/about/about.css">
 
 </head>
 

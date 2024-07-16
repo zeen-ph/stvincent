@@ -177,6 +177,58 @@ const galleryScroll = gsap
     y: -200,
   });
 
+/* PAGE ABOUT */
+/* ABOUT SECTION */
+const pageAbout = document.querySelectorAll(".page_about");
+
+pageAbout.forEach((entry) => {
+  gsap.set(pageAbout, {
+    yPercent: 0,
+    opacity: 0,
+  });
+});
+
+gsap.to(pageAbout, {
+  scrollTrigger: {
+    trigger: pageAbout,
+    start: "top 80%",
+    end: "top center",
+    markers: false,
+    scrub: true,
+  },
+  yPercent: 0,
+  opacity: 1,
+  backgroundColor: "#171717",
+});
+
+/* ABOUT CONTENT */
+let aboutInfo = document.querySelectorAll(".about-photo-item");
+aboutInfo.forEach(function (item, index) {
+  item.style.zIndex = aboutInfo.length - index;
+});
+
+gsap.set(".about-photo-item", {
+  clipPath: function () {
+    return "inset(0px 0px 0px 0px)";
+  },
+});
+
+const aboutAnimation = gsap.to(".about-photo-item:not(:last-child)", {
+  clipPath: function () {
+    return "inset(0px 0px 100% 0px)";
+  },
+  stagger: 0.5,
+  ease: "none",
+});
+
+ScrollTrigger.create({
+  trigger: ".about-work",
+  start: "top top",
+  end: "bottom bottom",
+  animation: aboutAnimation,
+  scrub: 1,
+});
+
 const lenis = new Lenis();
 
 lenis.on("scroll", (e) => {});

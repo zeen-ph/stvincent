@@ -21,7 +21,6 @@ body {
   min-height: 100vh;
   background: var(--color-white);
   color: var(--color-black);
-  overflow-x: hidden;
 }
 
 html.lenis,
@@ -46,5 +45,5 @@ html.lenis body {
 }
 
 .fe-page {
-  overflow-x: hidden;
+  contain: paint;
 }
