@@ -54,6 +54,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  user-select: none;
 }
 
 .admission-container {
@@ -94,6 +95,6 @@
 #text-front {
   color: transparent;
   text-stroke: 2px var(--color-black);
-  -webkit-text-stroke: 2px var(--color-black);
+  -webkit-text-stroke: 2px var(--color-white);
   z-index: 3;
 }

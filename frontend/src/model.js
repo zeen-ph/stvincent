@@ -49,6 +49,10 @@ let theta1 = 0;
 // updateScale();
 
 // import * as THREE from "https://cdn.skypack.dev/three@0.124.0";
+canvas.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
+
 import { RGBELoader } from "https://cdn.skypack.dev/three@0.124.0/examples/jsm/loaders/RGBELoader.js";
 import { OBJLoader } from "https://cdn.skypack.dev/three@0.134.0/examples/jsm/loaders/OBJLoader.js";
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.134.0/examples/jsm/loaders/GLTFLoader.js";
@@ -113,7 +117,7 @@ const material1 = new THREE.MeshStandardMaterial({
 
 const gltfLoader = new GLTFLoader();
 gltfLoader.load(
-  "/stvincent/frontend/public/model/trophyh.glb",
+  "/stvincent/frontend/public/model/scene.glb",
   (gltf) => {
     const object = gltf.scene;
 

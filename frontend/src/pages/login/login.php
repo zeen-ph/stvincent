@@ -1,4 +1,4 @@
-<section class="fe-page" id="page_login">
+<section class="fe-page" id="page_login" style="display: none;">
     <h1>Login</h1>
     <p>hello world</p>
     <p>hello world</p>

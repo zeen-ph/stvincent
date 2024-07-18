@@ -144,3 +144,11 @@
 
 
 </section>
+
+<script>
+    const aboutPage = document.getElementById('page_about');
+
+    aboutPage.addEventListener('contextmenu', (e) => {
+        e.preventDefault()
+    })
+</script>
