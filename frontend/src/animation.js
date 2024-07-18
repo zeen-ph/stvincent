@@ -229,6 +229,72 @@ ScrollTrigger.create({
   scrub: 1,
 });
 
+/* ADMISSIONS SECTION */
+function initMarquee() {
+  let direction = 1;
+  const roll1 = roll(".marquee-line", { duration: 5 });
+
+  const scroll = ScrollTrigger.create({
+    trigger: ".marquee-section",
+    onUpdate(self) {
+      if (self.direction !== direction) {
+        direction *= -1;
+        gsap.to(roll1, { timeScale: direction, overwrite: true });
+      }
+    },
+  });
+
+  function roll(targets, vars) {
+    vars = vars || {};
+    vars.ease = vars.ease || "none";
+
+    const tl = gsap.timeline({
+      repeat: -1,
+      defaults: { duration: vars.duration, ease: vars.ease },
+    });
+
+    const elements = gsap.utils.toArray(targets);
+    const clones = elements.map((el) => {
+      const clone = el.cloneNode(true);
+      el.parentNode.appendChild(clone);
+      return clone;
+    });
+
+    const positionClones = () => {
+      elements.forEach((el, i) => {
+        gsap.set(clones[i], {
+          position: "absolute",
+          top: el.offsetTop,
+          left:
+            el.offsetLeft +
+            (direction === 1 ? -el.offsetWidth : el.offsetWidth),
+        });
+      });
+    };
+
+    positionClones();
+
+    elements.forEach((el, i) => {
+      tl.to(
+        [el, clones[i]],
+        { x: direction === 1 ? el.offsetWidth : -el.offsetWidth },
+        0
+      );
+    });
+
+    window.addEventListener("resize", () => {
+      const time = tl.totalTime();
+      tl.totalTime(0);
+      positionClones();
+      tl.totalTime(time);
+    });
+
+    return tl;
+  }
+}
+
+initMarquee();
+
 const lenis = new Lenis();
 
 lenis.on("scroll", (e) => {});

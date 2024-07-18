@@ -1,11 +1,9 @@
 .page_about {
-  /* padding-top: 8em; */
   background-color: var(--color-white);
   color: var(--color-white);
   margin: 0;
   padding: 0;
 }
-
 .about-hero {
   width: 100vw;
   height: 100vh;

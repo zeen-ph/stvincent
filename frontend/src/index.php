@@ -35,6 +35,8 @@ session_start();
   <link rel="stylesheet" href="/stvincent/frontend/src/components/contact/contact.css">
   <link rel="stylesheet" href="/stvincent/frontend/src/components/gallery/gallery.css">
   <link rel="stylesheet" href="/stvincent/frontend/src/pages/about/about.css">
+  <link rel="stylesheet" href="/stvincent/frontend/src/pages/admissions/admissions.css">
+
 
 </head>
 
@@ -73,7 +75,17 @@ session_start();
 <!-- LENIS -->
 <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
+<!-- THREE -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<!-- <script src="https://unpkg.com/three@0.128.0/examples/jsm/loaders/GLTFLoader.js"></script>
+<script src="https://unpkg.com/three@0.128.0/examples/jsm/loaders/OBJLoader.js"></script>
+<script src="https://unpkg.com/three@0.128.0/examples/jsm/loaders/RGBELoader.js"></script> -->
+
+
 <!-- ANIMATION -->
 <script src="/stvincent/frontend/src/animation.js"></script>
+
+<!-- MODEL -->
+<script type="module" src="/stvincent/frontend/src/model.js"></script>
 
 </html>
